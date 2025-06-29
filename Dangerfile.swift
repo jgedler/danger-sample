@@ -1,9 +1,8 @@
-import Danger 
-import DangerSwiftLint
+import Danger
 
 let danger = Danger()
 
-SwiftLint.lint(inline: true)
-
 let editedFiles = danger.git.modifiedFiles + danger.git.createdFiles
 message("These files have changed: \(editedFiles.joined(separator: ", "))")
+
+SwiftLint.lint(.files(editedFiles), inline: true
