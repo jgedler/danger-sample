@@ -1,0 +1,24 @@
+---
+name: Check Pull Request
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+# Ensures that only one deploy task per branch/environment will run at a time.
+concurrency:
+  group: action-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  danger_ci:
+    name: Danger CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Danger Swift
+        uses: danger/swift@bb4faf2c5613960b3de954c631cedd4dc63c3fef #v3.21.1
+        with:
+          args: --failOnErrors --no-publish-check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # run: danger-swift ci
+    continue-on-error: false
