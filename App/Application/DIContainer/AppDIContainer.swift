@@ -6,7 +6,6 @@
 //
 
 import Networking
-//import Authentication
 import MoviesSearch
 
 final class AppDIContainer {
@@ -38,11 +37,3 @@ final class AppDIContainer {
         return DefaultDataTransferService(with: imagesDataNetwork)
     }()
 }
-
-// MARK: - Authentication conformance to Networking Service Protocols
-//extension AuthNetworkRequest: NetworkCancellable {}
-//extension AuthNetworkSessionManager: NetworkSessionManager {
-//    public func request(_ request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
-//        return authRequest(request, completion: completion)
-//    }
-//}
