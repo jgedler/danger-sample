@@ -26,4 +26,4 @@ if danger.github != nil {
 //warn(message: "makeMoviesSearchModule() que es esto?", file: "App/Application/DIContainer/AppDIContainer.swift", line: 16)
 
 print("Running Swiftlint on changed files...")
-SwiftLint.lint(inline: true, quiet: false)
+SwiftLint.lint(quiet: false)
