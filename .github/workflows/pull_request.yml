@@ -39,7 +39,7 @@ jobs:
         run: which danger-swift
       
       - name: Danger Swift
-        run: danger-swift ci
+        run: danger-swift ci --dangerfile Danger/Dangerfile.swift
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: false
