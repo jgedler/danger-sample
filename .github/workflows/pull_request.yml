@@ -30,16 +30,22 @@ jobs:
         env:
           HOMEBREW_NO_AUTO_UPDATE: 1
       
-      - name: Install Danger-Swift
-        run: brew install danger/tap/danger-swift
-        env:
-          HOMEBREW_NO_AUTO_UPDATE: 1
+      # - name: Install Danger-Swift
+      #   run: brew install danger/tap/danger-swift
+      #   env:
+      #     HOMEBREW_NO_AUTO_UPDATE: 1
 
-      - name: Verify Danger-Swift installation
-        run: which danger-swift
+      # - name: Verify Danger-Swift installation
+      #   run: which danger-swift
       
+      # - name: Danger Swift
+      #   run: danger-swift ci
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Danger Swift
-        run: danger-swift ci
+        uses: danger/swift@bb4faf2c5613960b3de954c631cedd4dc63c3fef #v3.21.1
+        with:
+          args: --failOnErrors --no-publish-check
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     continue-on-error: false
