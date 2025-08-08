@@ -37,6 +37,9 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
         setupBehaviours()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+
+        let button = UIButton()
+        button.titleLabel
     }
 
     private func bind(to viewModel: MoviesListViewModel) {
