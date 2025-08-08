@@ -23,7 +23,7 @@ if danger.github != nil {
     }
 }
 
-warn(message: "makeMoviesSearchModule() que es esto?", file: "App/Application/DIContainer/AppDIContainer.swift", line: 16)
+warn(message: "Estamos usando esto?. Veo que esta declarado pero no veo que se este utilizando", file: "DevPods/MoviesSearch/MoviesSearch/Module/Presentation/MoviesScene/MoviesList/View/MoviesListViewController.swift", line: 41)
 
-print("Running Swiftlint on changed files...")
+//print("Running Swiftlint on changed files...")
 //SwiftLint.lint(inline: true, quiet: false)
