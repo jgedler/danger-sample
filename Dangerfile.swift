@@ -24,4 +24,4 @@ if danger.github != nil {
 }
 
 print("Running Swiftlint on changed files...")
-SwiftLint.lint(inline: true, configFile: ".swiftlint.yml")
+SwiftLint.lint(.files(editedFiles), inline: true)
